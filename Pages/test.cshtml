@@ -1,0 +1,39 @@
+﻿@page
+@using JsonFiles;
+@model WebApplication_Powerwolf.Pages.testModel
+@{
+    ViewData["Title"] = "Test";
+    List<News> news = (List<News>) ViewData["News"];
+}
+@*jeżeli pusta lista to komunikat
+    zdjęcia z serwera xammp http
+*@
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2sth9TbwmnrRQj0Zl7fYmd?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2sth9TbwmnrRQj0Zl7fYmd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Image</th>
+            <th scope="col">Date</th>
+            <th scope="col">ShortDescription</th>
+            <th scope="col">LongDescription</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(News item in news)
+            {
+            <tr>
+                    <th scope="row">@item.Id</th>
+                    <td >@item.Title</td>
+                    <td >@item.Image</td>
+                    <td >@item.Date</td>
+                    <td >@item.ShortDescription</td>
+                    <td >@item.LongDescription</td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
