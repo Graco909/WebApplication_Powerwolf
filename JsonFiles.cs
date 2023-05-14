@@ -71,8 +71,7 @@ namespace JsonFiles
     public partial class News
     {
         [JsonProperty("id")]
-        [JsonConverter(typeof(ParseStringConverter))]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("Title")]
         public string Title { get; set; }

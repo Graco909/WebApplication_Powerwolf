@@ -1,0 +1,43 @@
+﻿@page
+@using JsonFiles;
+@model WebApplication_Powerwolf.Pages.testModel
+@{
+    ViewData["Title"] = "Test";
+    List<News> news = (List<News>) ViewData["News"];
+}
+@*jeżeli pusta lista to komunikat
+    zdjęcia z serwera xammp http
+*@
+<div class="text-center">
+    <img src="http://localhost/Photos/News_logo.png" class="rounded" alt="news_logo">
+</div>
+        @{
+            foreach(News item in news)
+            {
+                string id="id_"+item.Id,id2="#"+id;
+        <div class="card text-center">
+            <div class="card-header">
+                @item.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Title</h5>
+                <p class="card-text">@item.ShortDescription</p>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
+                        Read More
+                    </a>
+                </p>
+                <div class="collapse" id="@id">
+                    <div class="card card-body">
+                        @item.LongDescription
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                @item.Date
+            </div>
+        </div>
+        <br>
+        <br>
+            }
+        }

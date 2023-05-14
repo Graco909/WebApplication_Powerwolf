@@ -4,7 +4,7 @@ using JsonFiles;
 
 namespace WebApplication_Powerwolf.Pages
 {
-    public class testModel : PageModel
+    public class NewsModel : PageModel
     {
         readonly HttpClient client = new HttpClient();
         public void OnGet()
