@@ -9,7 +9,7 @@
     zdjęcia z serwera xammp http
 *@
 <div class="text-center">
-    <img width="100%" src="http://localhost/Photos/Band.jpeg" class="rounded" alt="news_logo">
+    <img width="80%" src="http://localhost/Photos/Band.jpeg" class="rounded" alt="news_logo">
 </div>
 <h2 class="display-4">
     <span>Band History</span>
@@ -40,7 +40,38 @@
     @{
         foreach (BandMembers item in bandmembers)
         {
-            <a href="#" class="list-group-item list-group-item-action">@item.Nickname</a>
+            string temp = "#" + @item.Id + "_" + item.FirstName;
+            <a href="@temp" class="list-group-item list-group-item-action">@item.Nickname</a>
         }
     }
 </div>
+<br><br>
+@{
+    foreach (BandMembers item in bandmembers)
+    {
+        string temp =@item.Id + "_" + item.FirstName;
+        <div id="@temp" style="display:flex; justify-content:center;justify-self:center;justify-items:center">
+            <div class="card mb-3" style="max-width:80%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        @{temp = "http://localhost/Photos/"+@item.Id+"_"+item.FirstName+".webp";}
+                        <img src="@temp" class="img-fluid rounded-start" alt="@item.Nickname">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Nickname</h5>
+                            @{
+                                temp = @item.Description;
+                            }
+                            @* naprawić wyświetlanie enterów
+                                dodać datę urodzenia*@
+                            <p class="card-text">@temp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

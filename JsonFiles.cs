@@ -40,7 +40,7 @@ namespace JsonFiles
         public string DateOfBirth { get; set; }
 
         [JsonProperty("Description")]
-        public string Description { get; set; }
+        public String Description { get; set; }
 
         [JsonProperty("Photo")]
         public string Photo { get; set; }

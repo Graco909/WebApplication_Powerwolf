@@ -9,7 +9,7 @@
     zdjęcia z serwera xammp http
 *@
 <div class="text-center">
-    <img src="http://localhost/Photos/News_logo.png" class="rounded" alt="news_logo">
+    <h2 class="display-2">News</h2>
 </div>
         @{
             foreach(News item in news)
@@ -17,10 +17,10 @@
                 string id="id_"+item.Id,id2="#"+id;
         <div class="card text-center">
             <div class="card-header">
-                @item.Id
+                @item.Title
             </div>
             <div class="card-body">
-                <h5 class="card-title">@item.Title</h5>
+                <h5 class="card-title"></h5>
                 <p class="card-text">@item.ShortDescription</p>
                 <p>
                     <a class="btn btn-primary" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
@@ -30,6 +30,10 @@
                 <div class="collapse" id="@id">
                     <div class="card card-body">
                         @item.LongDescription
+                        <br>
+                        <div class="text-center">
+                        <img src="@item.Image" class="rounded" width="80%" alt="">
+                        </div>
                     </div>
                 </div>
             </div>

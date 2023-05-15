@@ -20,5 +20,8 @@ namespace WebApplication_Powerwolf.Pages
             }
             ViewData["BandMembers"] = bandmembers;
         }
+        public void OnReload() { 
+        
+        }
     }
 }
