@@ -55,7 +55,7 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         @{temp = "http://localhost/Photos/"+@item.Id+"_"+item.FirstName+".webp";}
-                        <img src="@temp" class="img-fluid rounded-start" alt="@item.Nickname">
+                        <img id="section-@item.Id" src="@temp" class="img-fluid rounded-start" alt="@item.Nickname">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

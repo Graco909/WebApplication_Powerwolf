@@ -1,10 +1,91 @@
 ﻿@page
-@model IndexModel
+@*@model IndexModel*@
+@using JsonFiles;
+@model WebApplication_Powerwolf.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
+    List<BandMembers> bandmembers = (List<BandMembers>)ViewData["BandMembers"];
+    List<News> news = (List<News>)ViewData["News"];
+    List<Concerts> concerts = (List<Concerts>)ViewData["Concerts"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row">
+        <div class="welcome">
+            <h1>
+                POWERWOLF
+            </h1>
+            <p>
+                A name that fills every disciple of melodic heavy metal with joy and stands for a successful quintet that needs no more
+                introduction after 15 years of steep ascent. The anniversary was celebrated with a best-of release in 2020,
+                which united the highlights of all six studio albums released to date - including both long-running hits from early works,
+                and more recent hits from the gold-awarded records Blessed & Possessed and The Sacrament Of Sin, such as the platinum hit single
+                “Demons Are A Girl's Best Friend”. Now, only about 12 months later, arguably the most successful pack of the contemporary
+                German metal fauna is ready with bared fangs for the next bloody foray.
+            </p>
+            <a href="https://www.powerwolf.net/" target="_blank" class="button">
+                Official Site
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container band-members">
+    <div class="row">
+        <h2 class="title">Band members</h2>
+        @foreach (BandMembers member in bandmembers)
+        {
+            string temp = @member.Id + "_" + member.FirstName;
+            <div class="col-md-2 mb-4">
+                <a href="BandMembers?id=@member.Id#section-@member.Id">
+                <div class="card">
+                    @{
+                        temp = "http://localhost/Photos/" + @member.Id + "_" + member.FirstName + ".webp";
+                    }
+                        <img src="@temp" alt="@member.Nickname" class="card-img-top">
+                </div>
+                <p class="caption">@member.Nickname</p>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2 class="title">Latest News</h2>
+        @for (int i = 0; i <=2; i++)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">@news[i].Title</h5>
+                        <p class="card-text">@news[i].ShortDescription</p>
+                        <p class="card-text"><small class="text-muted">@news[i].Date</small></p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2 class="title">Next Shows</h2>
+        @for (int i = 0; i <= 3; i++)
+        {
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">@concerts[i].Name</h5>
+                        <p class="card-text">Country: @concerts[i].Country</p>
+                        <p class="card-text"><small class="text-muted">Date: @concerts[i].Date</small></p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
 </div>
