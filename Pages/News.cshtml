@@ -2,7 +2,7 @@
 @using JsonFiles;
 @model WebApplication_Powerwolf.Pages.testModel
 @{
-    ViewData["Title"] = "Test";
+    ViewData["Title"] = "News";
     List<News> news = (List<News>) ViewData["News"];
 }
 @*jeżeli pusta lista to komunikat
@@ -17,13 +17,13 @@
                 string id="id_"+item.Id,id2="#"+id;
         <div class="card text-center">
             <div class="card-header">
-                @item.Title
+                <h5 class="card-title">@item.Title</h5>
             </div>
             <div class="card-body">
-                <h5 class="card-title"></h5>
+                
                 <p class="card-text">@item.ShortDescription</p>
                 <p>
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
+                    <a class="btn btn-dark" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
                         Read More
                     </a>
                 </p>
