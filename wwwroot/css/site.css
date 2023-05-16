@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Gargoyles";
-    src: url("/fonts/gargoyles-webfont.woff") format("woff"));
+    src: url("/fonts/gargoyles-webfont.woff");
 }
 
 :root {
