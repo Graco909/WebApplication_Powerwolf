@@ -42,19 +42,30 @@
             <div class="carousel-caption top-0 mt-3">
                 <p class="fs-1 mt-3 fw-bold">@news[0].Title</p>
                 <p class="fs-2">@news[0].ShortDescription</p>
-                <a href="https://www.powerwolf.net/" target="_blank" class="button mt-5 fs-2">
+                @{
+                    string temp = "/News#card_id_" + news[0].Id;
+                    string temp2 = "id_" + news[0].Id;
+                }
+                <a href="@temp" class="button mt-5 fs-2" role="button">
                     Read More
                 </a>
             </div>
         </div>
-        @for (int i = 1; i <= 2; i++)
+        
+        @for(int i = 1; i <= 2; i++)
         {
+        
             <div class="carousel-item" style="height:600px">
                 <img src="@news[i].Image" class="d-block w-100" alt="..." style="object-fit:cover;filter:brightness(0.5);height:100%">
                 <div class="carousel-caption top-0 mt-3">
                     <p class="fs-1 mt-3 fw-bold text-capitalize">@news[i].Title</p>
                     <p class="fs-2">@news[i].ShortDescription</p>
-                    <a href="https://www.powerwolf.net/" target="_blank" class="button mt-5 fs-2">
+                            
+                            @{
+                                temp = "/News#card_id_" + news[i].Id;
+                                temp2 = "id_" + news[i].Id;
+                            }
+                    <a href="@temp" class="button mt-5 fs-2" role="button">
                         Read More
                     </a>
                 </div>
@@ -76,7 +87,7 @@
         <h2 class="title fs-0">Band members</h2>
         @foreach (BandMembers member in bandmembers)
         {
-            string temp = @member.Id + "_" + member.FirstName;
+            temp = @member.Id + "_" + member.FirstName;
             <div class="col-md-2 mb-4">
                 <a href="BandMembers?id=@member.Id#section-@member.Id">
                 <div class="card">
@@ -117,11 +128,11 @@
 <div class="container">
     <div class="row">
         <h2 class="title fs-0">Next Shows</h2>
-        @for (int i = 0; i <= 3; i++)
+        @for (int i = 0; i <= 2; i++)
         {
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <div class="card-body bg-black">
+            <div class="col-md-3" style="min-width:150px">
+                <div class="card mb-4" style="min-width:145px">
+                    <div class="card-body bg-black"style="min-width:140px">
                         <h5 class="card-title fs-2 fw-bold">@concerts[i].Name</h5>
                         <p class="card-text fs-4">Country: @concerts[i].Country</p>
                         <p class="card-text fs-4"><small class="text-muted">Date: @concerts[i].Date</small></p>

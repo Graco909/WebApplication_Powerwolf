@@ -14,30 +14,30 @@
         @{
             foreach(News item in news)
             {
-                string id="id_"+item.Id,id2="#"+id;
-        <div class="card text-center">
+        string id = "id_" + item.Id, id2 = "#" + id, id3 = "card_" + id;
+        <div class="card text-center bg-black" id="@id3">
             <div class="card-header">
-                <h5 class="card-title">@item.Title</h5>
+                <h5 class="card-title fs-1">@item.Title</h5>
             </div>
             <div class="card-body">
                 
-                <p class="card-text">@item.ShortDescription</p>
+                <p class="card-text fs-3">@item.ShortDescription</p>
                 <p>
-                    <a class="btn btn-dark" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
+                    <a class="btn btn-dark fs-4" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
                         Read More
                     </a>
                 </p>
                 <div class="collapse" id="@id">
-                    <div class="card card-body">
+                    <div class="card card-body bg-black fs-3">
                         @item.LongDescription
                         <br>
                         <div class="text-center">
-                        <img src="@item.Image" class="rounded" width="80%" alt="">
+                        <img src="@item.Image" class="rounded " width="80%" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-muted">
+            <div class="card-footer text-muted fs-4">
                 @item.Date
             </div>
         </div>
