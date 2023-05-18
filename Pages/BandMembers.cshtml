@@ -62,10 +62,11 @@
                             <h5 class="card-title">@item.Nickname</h5>
                             @{
                                 temp = @item.Description;
+                                
                             }
                             @* naprawić wyświetlanie enterów
                                 dodać datę urodzenia*@
-                            <p class="card-text">@temp</p>
+                            <p class="card-text">@Html.Raw(temp)</p>
                         </div>
                     </div>
                 </div>
