@@ -1,5 +1,6 @@
 ﻿@page
 @using JsonFiles
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model WebApplication_Powerwolf.Pages.MusicModel
 
 @{
@@ -14,7 +15,7 @@
     <div class="container">
         @foreach (string album in albums)
         {
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-6 text-center">
                     <img src="http://localhost/Photos/1_Karsten.webp" alt="Zdjęcie" class="img-fluid">
                     <div class="caption fs-2">@album</div>
@@ -30,7 +31,7 @@
                         {
                             if (song.Album==album)
                             {
-                                <li>@i. @song.Name</li>
+                                <li><a asp-page="Song" asp-route-songId="@song.Id">@i. @song.Name</a></li>
                                 i++;
                             }
                             
