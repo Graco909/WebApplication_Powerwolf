@@ -3,6 +3,10 @@
     src: url("/fonts/gargoyles-webfont.woff");
 }
 
+.custom-bg {
+    background-color: var(--bg-color);
+}
+
 :root {
     --bg-color: #333431;
     --text-color: #c7c1c3;
@@ -91,7 +95,7 @@ nav ul li {
 
 .title {
     text-align: center;
-    margin: 0 auto 80px;
+    margin: 80px auto;
     position: relative;
     line-height: 60px;
     color: var(--special-text-color);

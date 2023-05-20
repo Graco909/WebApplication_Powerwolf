@@ -1,0 +1,31 @@
+﻿@page
+@using JsonFiles
+@model WebApplication_Powerwolf.Pages.Song
+
+@{
+    ViewData["Title"] = "Song";
+    Songs song = (Songs)ViewData["Song"];
+}
+
+<div class="container">
+    <h1 style="text-align: center">@song.Name</h1>
+    <div class="card custom-bg" style="border-color: var(--text-color)">
+        <div class="card-body">
+            <h5 class="card-title">Album Name:</h5>
+            <p class="card-text">@song.Album</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item custom-bg"><strong>Release Date:</strong> @song.RelaseDate</li>
+            <li class="list-group-item custom-bg"><strong>Spotify link:</strong> <a href="" target="_blank">@song.SpotifyLink</a></li>
+            <li class="list-group-item custom-bg"><strong>YouTube link:</strong> <a href="" target="_blank">@song.YouTubeLink</a></li>
+        </ul>
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center">Lyrics</h5>
+            @{
+                string lyrics = song.Lyrics;
+                lyrics = lyrics.ToString().Replace("\n", "<br />");
+            }
+            <p class="card-text">@Html.Raw(lyrics)</p>
+        </div>
+    </div>
+</div>
