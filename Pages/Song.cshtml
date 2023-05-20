@@ -1,0 +1,11 @@
+﻿@page
+@using JsonFiles
+@model WebApplication_Powerwolf.Pages.Song
+
+@{
+    ViewData["Title"] = "Song";
+    Songs song = (Songs)ViewData["Song"];
+}
+
+<h1>@song.Name</h1>
+<p>@song.Lyrics</p>
