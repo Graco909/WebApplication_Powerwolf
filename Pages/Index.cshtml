@@ -15,7 +15,7 @@
             <h1 class="fs-0">
                 POWERWOLF
             </h1>
-            <p class="fs-3">
+            <p class="fs-2 caption">
                 A name that fills every disciple of melodic heavy metal with joy and stands for a successful quintet that needs no more
                 introduction after 15 years of steep ascent. The anniversary was celebrated with a best-of release in 2020,
                 which united the highlights of all six studio albums released to date - including both long-running hits from early works,
@@ -109,9 +109,9 @@
         @for (int i = 0; i <=2; i++)
         {
             <div class="col-md-4 ">
-                <div class="card mb-4">
-                    <div class="card-body fs-4 bg-black">
-                        <h5 class="card-title fs-2 text-capitalize fw-bold">@news[i].Title</h5>
+                <div class=" mb-4">
+                    <div class="card-body fs-4 bg-white bg-opacity-10">
+                        <h5 class="card-title fs-2 text-capitalize">@news[i].Title</h5>
                         <p class="card-text">@news[i].ShortDescription</p>
                         <p class="card-text"><small class="text-muted">@news[i].Date</small></p>
                         <a href="#" class="button">Read More</a>
@@ -131,9 +131,9 @@
         @for (int i = 0; i <= 2; i++)
         {
             <div class="col-md-3" style="min-width:150px">
-                <div class="card mb-4" style="min-width:145px">
-                    <div class="card-body bg-black"style="min-width:140px">
-                        <h5 class="card-title fs-2 fw-bold">@concerts[i].Name</h5>
+                <div class=" mb-4 " style="min-width:145px">
+                    <div class="card-body bg-white bg-opacity-10" style="min-width:140px">
+                        <h5 class="card-title fs-2 text-capitalize">@concerts[i].Name</h5>
                         <p class="card-text fs-4">Country: @concerts[i].Country</p>
                         <p class="card-text fs-4"><small class="text-muted">Date: @concerts[i].Date</small></p>
                         <a href="#" class="button fs-4">Tickets</a>

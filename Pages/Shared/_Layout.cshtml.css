@@ -10,8 +10,11 @@ nav ul li
 {
     font-size:30px;
 }
+.nav-link:hover, .nav-link:focus {
+    color: white;
+}
 
-a {
+a,a:hover {
   color: #0077cc;
 }
 

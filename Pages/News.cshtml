@@ -9,14 +9,14 @@
     zdjęcia z serwera xammp http
 *@
 <div class="text-center">
-    <h2 class="display-2">News</h2>
+    <h2 class="title fs-0">News</h2>
 </div>
         @{
             foreach(News item in news)
             {
         string id = "id_" + item.Id, id2 = "#" + id, id3 = "card_" + id;
-        <div class="card text-center bg-black" id="@id3">
-            <div class="card-header">
+        <div class=" text-center bg-white bg-opacity-10" id="@id3">
+            <div class="">
                 <h5 class="card-title fs-1">@item.Title</h5>
             </div>
             <div class="card-body">
@@ -28,7 +28,7 @@
                     </a>
                 </p>
                 <div class="collapse" id="@id">
-                    <div class="card card-body bg-black fs-3">
+                    <div class="  fs-3">
                         @item.LongDescription
                         <br>
                         <div class="text-center">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-muted fs-4">
+            <div class=" text-muted fs-3">
                 @item.Date
             </div>
         </div>
