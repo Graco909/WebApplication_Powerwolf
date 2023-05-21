@@ -3,7 +3,7 @@
 @model WebApplication_Powerwolf.Pages.testModel
 @{
     ViewData["Title"] = "News";
-    List<News> news = (List<News>) ViewData["News"];
+    List<News> news = (List<News>)ViewData["News"];
 }
 @*jeżeli pusta lista to komunikat
     zdjęcia z serwera xammp http
@@ -11,37 +11,37 @@
 <div class="text-center">
     <h2 class="title fs-0 fw-bold">News</h2>
 </div>
-        @{
-            foreach(News item in news)
-            {
-        string id = "id_" + item.Id, id2 = "#" + id, id3 = "card_" + id;
+@{
+    foreach (News singleNews in news)
+    {
+        string id = "id_" + singleNews.Id, id2 = "#" + id, id3 = "card_" + id;
         <div class=" text-center bg-white bg-opacity-10" id="@id3">
             <div class="">
-                <h5 class="card-title fs-1">@item.Title</h5>
+                <h5 class="card-title fs-1">@singleNews.Title</h5>
             </div>
             <div class="card-body">
-                
-                <p class="card-text fs-3">@item.ShortDescription</p>
+
+                <p class="card-text fs-3">@singleNews.ShortDescription</p>
                 <p>
-                    <a class="btn btn-dark fs-4" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@item.Id">
+                    <a class="btn btn-dark fs-4" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@singleNews.Id">
                         Read More
                     </a>
                 </p>
                 <div class="collapse" id="@id">
                     <div class="  fs-3">
-                        @item.LongDescription
+                        @singleNews.LongDescription
                         <br>
                         <div class="text-center">
-                        <img src="@item.Image" class="rounded " width="80%" alt="">
+                            <img src="@singleNews.Image" class="rounded " width="80%" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class=" text-muted fs-3">
-                @item.Date
+                @singleNews.Date
             </div>
         </div>
         <br>
         <br>
-            }
-        }
+    }
+}

@@ -6,18 +6,10 @@ namespace WebApplication_Powerwolf.Pages
 {
     public class ConcertsModel : PageModel
     {
-        readonly HttpClient client = new HttpClient();
         public void OnGet()
         {
-            var task = client.GetAsync("http://localhost/jsons/Concerts.json");
-            HttpResponseMessage result = task.Result;
-            List<Concerts> concerts = new List<Concerts>();
-            if (result.IsSuccessStatusCode)
-            {
-                Task<string> readString = result.Content.ReadAsStringAsync();
-                string jsonString = readString.Result;
-                concerts = Concerts.FromJson(jsonString);
-            }
+            List<Concerts> concerts = DataAccess.GetConcerts();
+            
             ViewData["Concerts"] = concerts;
         }
     }
