@@ -1,4 +1,35 @@
 ﻿@page
+@using JsonFiles
 @model WebApplication_Powerwolf.Pages.ConcertsModel
 @{
+    ViewData["Title"] = "Concerts";
+    List<Concerts> concerts = (List<Concerts>)ViewData["Concerts"];
+
 }
+
+<div class="container">
+    <h1 class="title text-center">Concerts</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>City</th>
+                <th>Country</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Concerts concert in concerts)
+            {
+                <tr>
+                    <td>@concert.Name</td>
+                    <td>@concert.Date</td>
+                    <td>@concert.City</td>
+                    <td>@concert.Country</td>
+                    <td><a href="/ConcertDetails?concertId=@concert.TicketLink">Tickets</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
