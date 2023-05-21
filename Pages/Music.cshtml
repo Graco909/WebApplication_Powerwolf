@@ -17,7 +17,11 @@
         {
             <div class="row mb-5">
                 <div class="col-md-6 text-center">
-                    <img src="http://localhost/Photos/1_Karsten.webp" alt="Zdjęcie" class="img-fluid">
+                    @{
+                        string temp=album.ToLower().Replace(" ","_");
+                        temp = "http://localhost/Photos/"+temp+".jpg";
+                    }
+                    <img src="@temp" alt="Zdjęcie" class="img-fluid">
                     <div class="caption fs-2">@album</div>
                     <div class="fs-3 text-muted">@songs.Find(x=>x.Album==album).RelaseDate</div>
                 </div>
