@@ -16,7 +16,7 @@
                 <th>Date</th>
                 <th>City</th>
                 <th>Country</th>
-                <th></th>
+                <th>Link</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                     <td>@concert.Date</td>
                     <td>@concert.City</td>
                     <td>@concert.Country</td>
-                    <td><a href="/ConcertDetails?concertId=@concert.TicketLink">Tickets</a></td>
+                    <td><a target="_blank" href="@concert.TicketLink">Tickets</a></td>
                 </tr>
             }
         </tbody>

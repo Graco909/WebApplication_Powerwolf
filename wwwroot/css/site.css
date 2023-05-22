@@ -36,6 +36,23 @@ body {
 
 
 /*css test*/
+table{
+    font-size: 30px;
+}
+
+table a:hover {
+    color: var(--special-text-color);
+    transition: 0.3s;
+}
+
+th{
+    color:var(--text-color);
+    font-size: 40px;
+}
+
+td{
+    color:var(--text-color);
+}
 
 a,a:hover {
     color: var(--text-color);
@@ -63,9 +80,13 @@ a:visited {
     color: var(--text-color);
 }
 
+header a:hover{
+    color: var(--special-text-color) !important;
+}
+
 nav ul li {
     padding: 10px 15px;
-    line-height: 0px;
+    line-height: 0;
     font-size: 24px;
 }
 
