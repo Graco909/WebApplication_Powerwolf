@@ -42,8 +42,8 @@ namespace JsonFiles
         [JsonProperty("Description")]
         public String Description { get; set; }
 
-        [JsonProperty("Photo")]
-        public string Photo { get; set; }
+        [JsonProperty("FacePhoto")]
+        public string FacePhoto { get; set; }
     }
 
     public partial class Concerts
